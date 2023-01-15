@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<group android:checkableBehavior="single">
+    <item
+        android:id="@+id/name"
+        android:title="名字"/>
+    <item
+        android:id="@+id/directing"
+        android:title="直播"/>
+    <item
+        android:id="@+id/file"
+        android:title="文件"/>
+</group>
+    <item
+        android:id="@+id/other"
+        android:title="其他"/>
+    <group>
+        <item
+            android:id="@+id/picture"
+            android:title="相册" />
+        <item
+            android:id="@+id/game"
+            android:title="游戏"/>
+    </group>
+</menu>
