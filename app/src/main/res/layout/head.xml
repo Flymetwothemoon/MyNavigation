@@ -10,9 +10,9 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="30dp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="50dp"
         android:src="@mipmap/background"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -21,7 +21,7 @@
         android:layout_marginStart="60dp"
         android:layout_marginTop="30dp"
         android:text="傻吊"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="30dp"
         app:layout_constraintStart_toEndOf="@+id/circleImage"
         app:layout_constraintTop_toTopOf="@+id/circleImage" />

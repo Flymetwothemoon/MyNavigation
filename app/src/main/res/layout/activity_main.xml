@@ -36,6 +36,7 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             app:tabGravity="fill"
+            app:layout_scrollFlags="scroll|enterAlways"
             android:background="?attr/colorAccent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/toolbar" />
@@ -45,7 +46,6 @@
             android:id="@+id/viewpager2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="104dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/appbarlayout" />
 
