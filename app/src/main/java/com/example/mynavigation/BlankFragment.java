@@ -3,11 +3,20 @@ package com.example.mynavigation;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import Adapter.num;
+import Adapter.numAdapter;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -24,7 +33,9 @@ public class BlankFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-
+    private List<num>mList = new ArrayList<>();
+    private View view;
+    private numAdapter adapter;
     public BlankFragment() {
         // Required empty public constructor
     }
@@ -63,7 +74,25 @@ public class BlankFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        Log.d("TAG","oncreateView"+"加载视图");
-        return inflater.inflate(R.layout.fragment_blank, container, false);
+        Log.d("TAG", "oncreateView" + "加载视图");
+        if (view == null) {
+            view = inflater.inflate(R.layout.fragment_blank, container, false);
+        }
+        init();
+        return view;
+    }
+    private void init(){
+        adapter = new numAdapter(mList);
+        init_0();
+        RecyclerView recyclerView = view.findViewById(R.id.recycler);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerView.setAdapter(adapter);
+    }
+    private void init_0(){
+        for(int i = 0;i<100;i++){
+            num num_0 = new num();
+            num_0.num = i;
+            mList.add(num_0);
+        }
     }
 }
