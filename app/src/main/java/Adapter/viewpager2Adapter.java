@@ -16,19 +16,19 @@ public class viewpager2Adapter extends FragmentStateAdapter {
     public viewpager2Adapter(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle,List<Fragment>fragments) {
         super(fragmentManager, lifecycle);
         mFragments = fragments;
-        Log.d("TAG","适配器的构造函数");
+        Log.d("TAG","adapter"+"适配器的构造函数");
     }
 
     @NonNull
     @Override
     public Fragment createFragment(int position) {
-        Log.d("TAG","这是第"+position+"个视图");
+        Log.d("TAG","createFragment"+"这是第"+position+"个视图");
         return mFragments.get(position);
     }
 
     @Override
     public int getItemCount() {
-        Log.d("TAG","返回"+mFragments.size());
+        Log.d("TAG","size"+"返回"+mFragments.size());
         return mFragments.size();
     }
 }

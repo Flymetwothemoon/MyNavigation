@@ -39,18 +39,19 @@ public class BlankFragment extends Fragment {
      */
     // TODO: Rename and change types and number of parameters
     public static BlankFragment newInstance(String param1, String param2) {
-        Log.d("TAG","从主函数传过来的碎片实例");
+
         BlankFragment fragment = new BlankFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
+        Log.d("TAG","newInstance"+"从主函数传过来的碎片实例");
         return fragment;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        Log.d("TAG","在这里创建");
+        Log.d("TAG","oncreate"+"在这里创建");
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
@@ -62,7 +63,7 @@ public class BlankFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        Log.d("TAG","加载视图");
+        Log.d("TAG","oncreateView"+"加载视图");
         return inflater.inflate(R.layout.fragment_blank, container, false);
     }
 }

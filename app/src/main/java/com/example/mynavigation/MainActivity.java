@@ -10,9 +10,12 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
@@ -21,13 +24,14 @@ import java.util.List;
 
 import Adapter.viewpager2Adapter;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 private Toolbar mToolbar;
 private DrawerLayout mDrawerLayout;
 private NavigationView mNavigationView;
 private List<Fragment>mFragments = new ArrayList<>();
 private TabLayout mTabLayout;
 private ViewPager2 mViewPager2;
+private FloatingActionButton mFloatingActionButton;
 private List<String>mList1 = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +45,7 @@ private List<String>mList1 = new ArrayList<>();
         mNavigationView = findViewById(R.id.navigationView);
         mViewPager2 = findViewById(R.id.viewpager2);
         mTabLayout = findViewById(R.id.tablayout);
+        mFloatingActionButton = findViewById(R.id.floatingbutton);
         init_0();
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -84,6 +89,7 @@ private List<String>mList1 = new ArrayList<>();
                 return true;
             }
         });
+        mFloatingActionButton.setOnClickListener(this);
     }
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item){
@@ -92,5 +98,15 @@ private List<String>mList1 = new ArrayList<>();
             break;
         }
         return true;
+    }
+
+    @Override
+    public void onClick(View v) {
+        Snackbar.make(MainActivity.this,v,"是否删除",Snackbar.LENGTH_LONG).setAction("确定", new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this,"删除掉了",Toast.LENGTH_SHORT).show();
+            }
+        }).show();
     }
 }
