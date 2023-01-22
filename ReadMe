@@ -2,7 +2,7 @@
 1.首先用的是DrawLayout+Toolbar实现侧边栏
 2.将侧边栏用NavigationView实现,并完成了headerLayout与menu,其中menu里面通过group分割开
 3.实现了NavigationView的点击,通过setNavigationItemSelectedListener里面重写onNavigationItemSelected实现点击后所做的事情
-4.Tablayout+ViewPager2的结合
+4.Tablayout+ViewPager2+recyclerview的结合
 5.FloatingButton与SnackBar的结合
 6.coordinatorlayout与AppBarLayout的结合实现了Toorbar的隐藏
 7.coordinatorlayout与AppBarLayout与CollapsingToolbarLayout实现折叠效果
