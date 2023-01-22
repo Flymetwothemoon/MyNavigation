@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
@@ -31,6 +32,7 @@ private NavigationView mNavigationView;
 private List<Fragment>mFragments = new ArrayList<>();
 private TabLayout mTabLayout;
 private ViewPager2 mViewPager2;
+private CollapsingToolbarLayout mCollapsingToolbarLayout;
 private FloatingActionButton mFloatingActionButton;
 private List<String>mList1 = new ArrayList<>();
     @Override
@@ -46,7 +48,9 @@ private List<String>mList1 = new ArrayList<>();
         mViewPager2 = findViewById(R.id.viewpager2);
         mTabLayout = findViewById(R.id.tablayout);
         mFloatingActionButton = findViewById(R.id.floatingbutton);
+        mCollapsingToolbarLayout = findViewById(R.id.collapsing);
         init_0();
+        mToolbar.setTitle("MyNavigation");
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         click();
