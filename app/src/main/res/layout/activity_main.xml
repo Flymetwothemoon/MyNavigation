@@ -37,6 +37,7 @@
         android:theme="@style/Theme.Design.Light.NoActionBar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_collapseMode="pin"
         app:popupTheme="@style/Base.ThemeOverlay.AppCompat.Dark" />
 </com.google.android.material.appbar.CollapsingToolbarLayout>
         <com.google.android.material.tabs.TabLayout
@@ -53,8 +54,9 @@
 
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/viewpager2"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
            />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -67,7 +69,6 @@
         android:src="@drawable/ic_baseline_add_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
-
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
     <com.google.android.material.navigation.NavigationView

@@ -50,7 +50,7 @@ private List<String>mList1 = new ArrayList<>();
         mFloatingActionButton = findViewById(R.id.floatingbutton);
         mCollapsingToolbarLayout = findViewById(R.id.collapsing);
         init_0();
-        mToolbar.setTitle("MyNavigation");
+        mCollapsingToolbarLayout.setTitle("MyNavigation");
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         click();
